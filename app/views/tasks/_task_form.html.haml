@@ -1,0 +1,11 @@
+.form
+  %h1 New Activity
+  = simple_form_for @task do |f|
+    .modal-body
+      = f.input :activity
+      = f.input :description
+      = f.input :start_time
+      = f.input :end_time
+      = f.input :completed
+    .modal-footer
+      = f.submit 'Save', class: 'btn btn-primary'

@@ -1,0 +1,26 @@
+= link_to 'Add New Activity', new_task_path,  class:'btn btn-primary'
+.container
+  - if @tasks.empty?
+    %span.text-warning No activities reported!
+  - else
+    %table.table.table-hover.table-bordered
+      %thead
+        %tr
+          %th Activity
+          %th Description
+          %th Start Time
+          %th End Time
+          %th Completed
+
+
+      %tbody
+        - @tasks.each do |task|
+          %tr
+            %strong
+            %td= task.activity
+            %td= task.description
+            %td= task.start_time
+            %td= task.end_time
+            %td= task.completed
+
+#modal.modal.fade
